@@ -8,13 +8,14 @@ Creates the camera and dictates its tick behavior.
  */
 
 
+import com.bmengine.primitives.Position;
+
 public class Camera {
 
-    private int x,y;
+    private Position position;
 
-    public Camera(int x, int y){
-        this.x = x;
-        this.y = y;
+    public Camera(Position position){
+        this.position = position;
 
     }
 
@@ -24,19 +25,11 @@ public class Camera {
 
     }
 
-    public int getX() {
-        return x;
+    public Position getPosition() {
+        return position;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
+    public void setPosition(Position position) {
+        this.position = position;
     }
 }
