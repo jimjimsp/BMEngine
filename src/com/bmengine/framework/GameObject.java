@@ -1,5 +1,7 @@
 package com.bmengine.framework;
 
+import com.bmengine.primitives.Position;
+
 import java.util.LinkedList;
 import java.awt.Graphics;
 
@@ -15,32 +17,27 @@ criterion that they must have a tick and render method. /J
 
 public abstract class GameObject {
 
-    protected float x,y;
-    protected ObjectID id;
+    private Position position;
+    private ObjectID id;
 
-    public GameObject(float x, float y, ObjectID id){
-        this.x = x;
-        this.y = y;
+    public GameObject(Position position, ObjectID id){
+        this.position = position;
         this.id = id;
     }
 
     public abstract void tick(LinkedList<GameObject> object);
     public abstract void render(Graphics g);
 
-    public float getX(){
-        return x;
+    public Position getPosition(){
+        return position;
     }
 
-    public float getY(){
-        return y;
+    public void setX(int x){
+        position.setX(x);
     }
 
-    public void setX(float x){
-        this.x = x;
-    }
-
-    public void setY(float y){
-        this.y = y;
+    public void setY(int y){
+        position.setY(y);
     }
 
 }
