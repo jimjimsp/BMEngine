@@ -17,7 +17,7 @@ all of the game objects are iterated through and ticked/rendered.
 
 public class Handler {
 
-    public LinkedList<GameObject> object = new LinkedList<GameObject>();
+    public LinkedList<GameObject> objects = new LinkedList<GameObject>();
 
     private GameObject tempObject;
     private Camera camera;
@@ -35,17 +35,17 @@ public class Handler {
 
     // Iterates through and ticks all current game objects. /J
     public void tick(){
-        for(int i = 0; i < object.size(); i++){
-            tempObject = object.get(i);
-            tempObject.tick(object);
+        for(int i = 0; i < objects.size(); i++){
+            tempObject = objects.get(i);
+            tempObject.tick(objects);
         }
     }
 
 
     // Iterates through and renders all current game objects. /J
     public void render(Graphics g){
-        for(int i = 0; i < object.size(); i++){
-            tempObject = object.get(i);
+        for(int i = 0; i < objects.size(); i++){
+            tempObject = objects.get(i);
             tempObject.render(g);
         }
     }
@@ -60,12 +60,12 @@ public class Handler {
 
     // Add a game object to the list of current game objects. /J
     public void addObject(GameObject object){
-        this.object.add(object);
+        this.objects.add(object);
     }
 
 
     // Removes a game object to the list of current game objects. /J
     public void removeObject(GameObject object){
-        this.object.remove(object);
+        this.objects.remove(object);
     }
 }

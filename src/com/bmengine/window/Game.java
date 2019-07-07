@@ -30,7 +30,6 @@ public class Game extends Canvas implements Runnable{
 
 
     // Will initialise Game Objects such as Textures, Camera, Tick-handler etc. /J
-
     private void init(){
         WIDTH = getWidth();
         HEIGHT = getHeight();
@@ -111,16 +110,16 @@ public class Game extends Canvas implements Runnable{
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, getWidth(), getHeight());
 
-        Graphics g2d = (Graphics2D) g;
+        Graphics2D g2d = (Graphics2D) g;
 
         g2d.setColor(Color.WHITE);
 
         // START CAMERA
         g2d.translate(camera.getX(), camera.getY());
 
-            // Everthing here will be rendered.
+            // Everything here will be rendered.
             // Though most things are handled by the handler. /J
-            handler.render(g);
+            handler.render(g2d);
 
         // END CAMERA
         g2d.translate(-camera.getX(), -camera.getY());
