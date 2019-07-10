@@ -15,17 +15,17 @@ public class Player extends GameObject {
 
     private Handler handler;
     Texture texture = Game.getInstance();
-    private Animation player_walk_left;
     private Animation player_walk_right;
+    private Animation player_walk_left;
     Position velDir;
 
 
-    public Player(Position position, String name, Handler handler, Position velDir) {
+    public Player(Position position, String name, Handler handler, Position velDir, Animation[]) {
         super(position, name);
         this.velDir = velDir;
         this.handler = handler;
-        player_walk_right =  new Animation(5, texture.player[0],texture.player[1],texture.player[2]);
-        player_walk_left =  new Animation(5, texture.player[3],texture.player[4],texture.player[5]);
+        player_walk_left =  new Animation(5, texture.player[0],texture.player[1],texture.player[2]);
+        player_walk_right =  new Animation(5, texture.player[3],texture.player[4],texture.player[5]);
     }
 
     public void tick(LinkedList<GameObject> objects){
@@ -35,6 +35,8 @@ public class Player extends GameObject {
 
         player_walk_right.runAnimation();
         player_walk_left.runAnimation();
+
+        updateFacing();
     }
 
     public void render(Graphics g) {
@@ -58,5 +60,13 @@ public class Player extends GameObject {
                 }
             }
 
+    }
+
+    private void updateFacing(){
+        if(velDir.getX()>0){
+            facing = 'r';
+        } else if (velDir.getX() < 0) {
+            facing = 'l';
+        }
     }
 }

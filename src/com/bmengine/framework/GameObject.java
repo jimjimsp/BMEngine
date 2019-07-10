@@ -1,6 +1,8 @@
 package com.bmengine.framework;
 
+import com.bmengine.primitives.ObjectBounds;
 import com.bmengine.primitives.Position;
+import com.bmengine.window.Handler;
 
 import java.util.LinkedList;
 import java.awt.Graphics;
@@ -18,13 +20,15 @@ criterion that they must have a tick and render method. /J
 public abstract class GameObject {
 
     protected Position position;
-    protected int Velocity = 0;
-    protected String name;
-    protected char facing = 'l';
+    protected String id;
+    protected Handler handler;
+    protected ObjectBounds bounds;
 
-    public GameObject(Position position, String name){
+    public GameObject(Position position, String id, Handler handler, ObjectBounds bounds){
         this.position = position;
-        this.name = name;
+        this.id = id;
+        this.handler = handler;
+        this.bounds = bounds;
     }
 
     public abstract void tick(LinkedList<GameObject> objects);
@@ -32,14 +36,6 @@ public abstract class GameObject {
 
     public Position getPosition(){
         return position;
-    }
-
-    public int getVelocity() {
-        return Velocity;
-    }
-
-    public void setVelocity(int velocity) {
-        Velocity = velocity;
     }
 
     public void setPosition(Position position){
