@@ -1,6 +1,7 @@
 package com.bmengine.window;
 
 import com.bmengine.framework.KeyInput;
+import com.bmengine.primitives.Position;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -34,7 +35,7 @@ public class Game extends Canvas implements Runnable{
         WIDTH = getWidth();
         HEIGHT = getHeight();
 
-        camera = new Camera(0, 0);
+        camera = new Camera(new Position(0,0));
         handler = new Handler(camera);
         handler.startGame();
         this.addKeyListener(new KeyInput(handler));
@@ -115,14 +116,14 @@ public class Game extends Canvas implements Runnable{
         g2d.setColor(Color.WHITE);
 
         // START CAMERA
-        g2d.translate(camera.getX(), camera.getY());
+        g2d.translate(camera.getPosition().getX(), camera.getPosition().getY());
 
             // Everything here will be rendered.
             // Though most things are handled by the handler. /J
             handler.render(g2d);
 
         // END CAMERA
-        g2d.translate(-camera.getX(), -camera.getY());
+        g2d.translate(-camera.getPosition().getX(), -camera.getPosition().getY());
         g.dispose();
         bufferStrategy.show();
 

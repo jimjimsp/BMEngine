@@ -25,7 +25,7 @@ public abstract class GameObject {
         this.id = id;
     }
 
-    public abstract void tick(LinkedList<GameObject> object);
+    public abstract void tick(LinkedList<GameObject> objects);
     public abstract void render(Graphics g);
 
     public Position getPosition(){

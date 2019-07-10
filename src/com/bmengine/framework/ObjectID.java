@@ -11,6 +11,6 @@ game objects we're going to use.
 
 public enum ObjectID {
 
-    // Define types of object here. (Player, intractable, etc) /J
+    // Define types of object here. (Player(), intractable(), etc) /J
 
 }
