@@ -2,6 +2,7 @@ package com.bmengine.window;
 
 import com.bmengine.framework.KeyInput;
 import com.bmengine.primitives.Position;
+import com.bmengine.worldobjects.Player;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -28,6 +29,7 @@ public class Game extends Canvas implements Runnable{
 
     Handler handler;
     Camera camera;
+    static Texture texture;
 
 
     // Will initialise Game Objects such as Textures, Camera, Tick-handler etc. /J
@@ -35,6 +37,9 @@ public class Game extends Canvas implements Runnable{
         WIDTH = getWidth();
         HEIGHT = getHeight();
 
+        Player player = new Player(new Position(0,0), "Player", handler, new Position(1,1));
+
+        texture = new Texture();
         camera = new Camera(new Position(0,0));
         handler = new Handler(camera);
         handler.startGame();
@@ -130,6 +135,12 @@ public class Game extends Canvas implements Runnable{
 
     }
 
+    /*
+     * Get Textures
+     */
+    public static Texture getInstance(){
+        return texture;
+    }
 
     // Set up window.
     public static void main(String args[]){

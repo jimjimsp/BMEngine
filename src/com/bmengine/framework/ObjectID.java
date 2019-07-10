@@ -13,4 +13,6 @@ public enum ObjectID {
 
     // Define types of object here. (Player(), intractable(), etc) /J
 
+    Player();
+
 }

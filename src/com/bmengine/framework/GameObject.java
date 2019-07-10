@@ -17,12 +17,17 @@ criterion that they must have a tick and render method. /J
 
 public abstract class GameObject {
 
-    private Position position;
-    private ObjectID id;
+    protected Position position;
+    protected ObjectID id;
+    protected String actionState = "null";
+    protected int Velocity = 0;
+    protected String name;
+    protected char facing = 'l';
 
-    public GameObject(Position position, ObjectID id){
+    public GameObject(Position position, String name){
         this.position = position;
         this.id = id;
+        this.name = name;
     }
 
     public abstract void tick(LinkedList<GameObject> objects);
@@ -30,6 +35,22 @@ public abstract class GameObject {
 
     public Position getPosition(){
         return position;
+    }
+
+    public String getActionState() {
+        return actionState;
+    }
+
+    public void setActionState(String actionState) {
+        this.actionState = actionState;
+    }
+
+    public int getVelocity() {
+        return Velocity;
+    }
+
+    public void setVelocity(int velocity) {
+        Velocity = velocity;
     }
 
     public void setPosition(Position position){
