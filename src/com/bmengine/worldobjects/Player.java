@@ -1,7 +1,6 @@
 package com.bmengine.worldobjects;
 
 import com.bmengine.framework.GameObject;
-import com.bmengine.framework.ObjectID;
 import com.bmengine.primitives.Position;
 import com.bmengine.window.Animation;
 import com.bmengine.window.Game;
@@ -16,8 +15,8 @@ public class Player extends GameObject {
 
     private Handler handler;
     Texture texture = Game.getInstance();
-    private Animation player_walk_right;
     private Animation player_walk_left;
+    private Animation player_walk_right;
     Position velDir;
 
 

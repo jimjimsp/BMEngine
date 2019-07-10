@@ -37,8 +37,6 @@ public class Game extends Canvas implements Runnable{
         WIDTH = getWidth();
         HEIGHT = getHeight();
 
-        Player player = new Player(new Position(0,0), "Player", handler, new Position(1,1));
-
         texture = new Texture();
         camera = new Camera(new Position(0,0));
         handler = new Handler(camera);

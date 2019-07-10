@@ -4,6 +4,8 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.util.LinkedList;
 import com.bmengine.framework.GameObject;
+import com.bmengine.primitives.Position;
+import com.bmengine.worldobjects.Player;
 
 
 /*
@@ -54,7 +56,7 @@ public class Handler {
     // Called when the game starts.
     // Should fetch all of the start screens image resources. /J
     public void startGame(){
-        System.out.println("HANDLER START.");
+        addObject(new Player(new Position(2,2), "Player", this, new Position(1,1) ));
     }
 
 
