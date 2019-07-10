@@ -42,4 +42,7 @@ public abstract class GameObject {
         this.position = position;
     }
 
+    public String getId() {
+        return id;
+    }
 }
