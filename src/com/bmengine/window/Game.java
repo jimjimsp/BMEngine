@@ -1,10 +1,12 @@
 package com.bmengine.window;
 
 import com.bmengine.framework.KeyInput;
+import com.bmengine.framework.MouseInput;
 import com.bmengine.primitives.Position;
 import com.bmengine.worldobjects.Player;
 
 import java.awt.*;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferStrategy;
 
 /*
@@ -42,6 +44,7 @@ public class Game extends Canvas implements Runnable{
         handler = new Handler(camera);
         handler.startGame();
         this.addKeyListener(new KeyInput(handler));
+        this.addMouseListener(new MouseInput(handler));
     }
 
 

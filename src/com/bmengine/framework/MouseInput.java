@@ -1,11 +1,19 @@
 package com.bmengine.framework;
 
 import com.bmengine.primitives.Position;
+import com.bmengine.window.Handler;
+import com.bmengine.worldobjects.Player;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class MouseInput extends MouseAdapter {
+
+    private Handler handler;
+
+    public MouseInput(Handler handler) {
+        this.handler = handler;
+    }
 
     public void mousePressed(MouseEvent e){
 
@@ -17,10 +25,12 @@ public class MouseInput extends MouseAdapter {
         switch(mouseButton) {
             case 1:
                 //Interact with object
+                handler.mouseClicked(mousePosition); // temp method.
                 break;
 
             case 2:
                 //Inspect object
+                handler.mouseClicked(mousePosition); // temp method.
                 break;
         }
     }

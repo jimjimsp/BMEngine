@@ -12,7 +12,7 @@ public class ObjectBounds {
     }
 
     public Rectangle getBounds(Position position) {
-        return new Rectangle(height, width, position.getX(), position.getY());
+        return new Rectangle((int)height, (int)width, (int)position.getX(), (int)position.getY());
     }
 
     public int getWidth() {

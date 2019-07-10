@@ -25,7 +25,7 @@ public abstract class GameObject {
     protected ObjectBounds bounds;
 
     public GameObject(Position position, String id, Handler handler, ObjectBounds bounds){
-        this.position = position;
+        this.position = new Position(position.getX() - bounds.getWidth()/2, position.getY() - bounds.getHeight());
         this.id = id;
         this.handler = handler;
         this.bounds = bounds;
@@ -42,4 +42,27 @@ public abstract class GameObject {
         this.position = position;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Handler getHandler() {
+        return handler;
+    }
+
+    public void setHandler(Handler handler) {
+        this.handler = handler;
+    }
+
+    public ObjectBounds getBounds() {
+        return bounds;
+    }
+
+    public void setBounds(ObjectBounds bounds) {
+        this.bounds = bounds;
+    }
 }

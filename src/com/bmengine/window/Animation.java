@@ -38,7 +38,7 @@ public class Animation {
     }
 
     public void drawAnimation(Graphics g, Position position) {
-        g.drawImage(currentImg, position.getX(), position.getY(), null);
+        g.drawImage(currentImg, (int)position.getX(), (int)position.getY(), null);
     }
 
 }

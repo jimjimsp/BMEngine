@@ -11,54 +11,110 @@ import com.bmengine.window.Texture;
 import java.awt.*;
 import java.util.LinkedList;
 
+/*
+
+Stand/default animation -> animations[0]
+Walk right       -> animations[1]
+Walk left      -> animations[2]
+
+*/
+
+
+
+
+
 public class WorldObject extends GameObject{
 
-    private Position velDir;
-    private Animation animStand;
+    private Position velDir = new Position(0,0);
+    private char facing = 'r';
+    private String actionState = "default";
 
-    public WorldObject(Position position, String id, Handler handler, ObjectBounds bounds, Position velDir, Animation animStand) {
+    private Animation[] animations;
+
+    public WorldObject(Position position, String id, Handler handler, ObjectBounds bounds,  Animation... args) {
         super(position, id, handler, bounds);
 
+        animations = new Animation[args.length];
 
-        this.velDir = velDir;
-        this.handler = handler;
-        player_walk_left =  new Animation(5, texture.player[0],texture.player[1],texture.player[2]);
-        player_walk_right =  new Animation(5, texture.player[3],texture.player[4],texture.player[5]);
+        for (int i = 0; i<args.length; i++){
+            animations[i] = args[i];
+        }
+
     }
 
     public void tick(LinkedList<GameObject> objects){
-
-        position.setX(position.getX() + velDir.getX());
-        position.setY(position.getY() + velDir.getY());
-
-        player_walk_right.runAnimation();
-        player_walk_left.runAnimation();
-
+        runAnimation();
+        updateWalk();
         updateFacing();
+
     }
 
     public void render(Graphics g) {
 
-        if(velDir.getX() != 0){
-            if(velDir.getX() > 0){
-                player_walk_right.drawAnimation(g, position);
-                facing = 'l';
+        if(velDir.getX() != 0 || velDir.getY() != 0) {
+            if(facing=='r') {
+                animations[1].drawAnimation(g, position);
             }
-            else if (velDir.getX() < 0){
-                player_walk_left.drawAnimation(g, position);
-                facing = 'r';
+            else if(facing=='l') {
+                animations[2].drawAnimation(g, position);
             }
         }
         else {
-            if (facing == 'l'){
-                g.drawImage(texture.player[0], position.getX(),position.getX(),null);
-            }
-            else {
-                g.drawImage(texture.player[4], position.getX(),position.getX(),null);
-            }
+            animations[0].drawAnimation(g, position);
         }
+    }
 
+    public void updateFacing(){
+
+        if (velDir.getX() < 0){
+            facing = 'l';
+        }
+        else if(velDir.getX() > 0){
+            facing = 'r';
+        }
+    }
+
+    public void updateWalk(){
+        position.setX(position.getX() + velDir.getX());
+        position.setY(position.getY() + velDir.getY());
+    }
+
+    public void runAnimation(){
+        for (int i = 0; i<animations.length; i++) {
+            animations[i].runAnimation();
+        }
+    }
+
+    public Position getVelDir() {
+        return velDir;
+    }
+
+    public void setVelDir(Position velDir) {
+        this.velDir = velDir;
+    }
+
+    public char getFacing() {
+        return facing;
+    }
+
+    public void setFacing(char facing) {
+        this.facing = facing;
+    }
+
+    public String getActionState() {
+        return actionState;
+    }
+
+    public void setActionState(String actionState) {
+        this.actionState = actionState;
+    }
+
+    public Animation[] getAnimations() {
+        return animations;
+    }
+
+    public void setAnimations(Animation[] animations) {
+        this.animations = animations;
     }
 }
 
-}

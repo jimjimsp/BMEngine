@@ -23,6 +23,7 @@ public class Handler {
 
     private GameObject tempObject;
     private Camera camera;
+    private Player player;
 
     private BufferedImage tempImage = null;
 
@@ -30,8 +31,6 @@ public class Handler {
         this.camera = camera;
 
         BufferedImageLoader loader = new BufferedImageLoader();
-
-        // Load image resources like bkgs and sprite sheets here /J
     }
 
 
@@ -56,9 +55,13 @@ public class Handler {
     // Called when the game starts.
     // Should fetch all of the start screens image resources. /J
     public void startGame(){
-        addObject(new Player(new Position(2,2), "Player", this, new Position(1,1) ));
+        player = new Player(new Position(0,0), this, Game.getInstance());
+        addObject(player);
     }
 
+    public void mouseClicked(Position clickPosition) {
+        player.mouseClick(clickPosition);
+    }
 
     // Add a game object to the list of current game objects. /J
     public void addObject(GameObject object){
