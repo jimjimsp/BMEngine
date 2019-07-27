@@ -1,0 +1,32 @@
+TEST GAME:
+
+
+__ROOM 1__
+
+INTERACTABLES: 	CUPBOARD, DOOR
+ITEMS:			KEY
+CHARACTERS:	
+
+PLAYER opens CUPBOARD. 
+Inside CUPBOARD there is a visible KEY. 
+PLAYER picks up KEY. 
+PLAYER uses KEY on DOOR. 
+PLAYER enters the DOOR => ROOM 2.
+
+
+
+__ROOM 2__
+
+INTERACTABLES:	DESK, FIRE_PLACE
+ITEMS:			WOOD, LIGHTER, LIGHTER_FLUID, PAPER, FIRE_WOOD
+CHARACTERS:
+
+PLAYER talks to PERSON. 
+”Do you want wood?” => ”Yes.” => PLAYER receives WOOD in inventory.
+PLAYER interacts with DESK.
+”There is a lighter here” => PLAYER receives LIGHTER in inventory.
+PLAYER picks up PAPER from floor.
+PLAYER picks up LIGHTER_FLUID from top of DESK.
+PLAYER combines WOOD + PAPER + LIGHTER_FLUID => PLAYER receives FIRE_WOOD
+PLAYER places FIRE_WOOD in FIRE_PLACE.
+PLAYER uses LIGHTER on FIRE_PLACE => FIRE in FIRE_PLACE.
