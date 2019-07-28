@@ -4,73 +4,9 @@
 
     <interactable>
 
-        <name>Template Interactable</name>
-
-        <inter_id>int_ex_1</inter_id>
-
-        <states>
-            <state id="default">state_1</state>
-            <state>state_2</state>
-            <state>state_3</state>
-        </states>
-
-        <spawn_position>
-            <x>0</x>
-            <y>0</y>
-        </spawn_position>
-
-        <animations>
-            <animation id="state_1">
-                <image>FILEPATH</image>
-            </animation>
-            <animation id="state_2">
-                <image>FILEPATH</image>
-            </animation>
-            <animation id="state_3">
-                <image>FILEPATH</image>
-            </animation>
-        </animations>
-
-        <descriptions>
-            <description id="state_1">This interactable is in state 1.</description>
-            <description id="state_2">This interactable is in state 2.</description>
-            <description id="state_3">This interactable is in state 3.</description>
-        </descriptions>
-
-        <on_interact>
-
-            <interaction>
-                <reqired_item>none</reqired_item>
-                <required_state>none</required_state>
-                <verb>print description id=current_state</verb>
-            </interaction>
-
-            <interaction>
-                <reqired_item>example_item_1</reqired_item>
-                <required_state>state_1</required_state>
-                <verb>print This interactable in now in state 2.</verb>
-                <verb>get example_item_2</verb>
-                <verb>set_state state_2</verb>
-            </interaction>
-
-            <interaction>
-                <reqired_item>example_item_2</reqired_item>
-                <required_state>state_2</required_state>
-                <verb>print This interactable in now in state 3.</verb>
-                <verb>set_state state_3</verb>
-            </interaction>
-
-        </on_interact>
-
-    </interactable>
-
-
-
-    <interactable>
-
         <name>Cupboard</name>
 
-        <inter_id>int_cont_1</inter_id>
+        <inter_id>int_r1_cupb1</inter_id>
 
         <states>
             <state id="default">closed</state>
@@ -85,13 +21,20 @@
 
         <animations>
             <animation id="closed">
-                <image>FILEPATH</image>
+                <image>images/int_r1_cupb1_closed.png</image>
             </animation>
             <animation id="opened">
-                <image>FILEPATH</image>
+                <image>images/int_r1_cupb1_open.png</image>
             </animation>
             <animation id="emptied">
-                <image>FILEPATH</image>
+                <image>images/int_r1_cupb1_empty.png</image>
+            </animation>
+            <animation id="change_state_anim">
+                <image>images/int_r1_cupb1_anim1.png</image>
+                <image>images/int_r1_cupb1_anim2.png</image>
+                <image>images/int_r1_cupb1_anim3.png</image>
+                <image>images/int_r1_cupb1_anim4.png</image>
+                <image>images/int_r1_cupb1_anim5.png</image>
             </animation>
         </animations>
 
@@ -127,7 +70,7 @@
 
         <name>Door</name>
 
-        <inter_id>int_door_1</inter_id>
+        <inter_id>int_r1_door1</inter_id>
 
         <states>
             <state id="default">locked</state>
@@ -141,10 +84,17 @@
 
         <animations>
             <animation id="locked">
-                <image>FILEPATH</image>
+                <image>images/int_r1_door1_closed.png</image>
             </animation>
             <animation id="unlocked">
-                <image>FILEPATH</image>
+                <image>images/int_r1_door1_open.png</image>
+            </animation>
+            <animation id="change_state_anim">
+                <image>images/int_r1_door1_anim1.png</image>
+                <image>images/int_r1_door1_anim2.png</image>
+                <image>images/int_r1_door1_anim3.png</image>
+                <image>images/int_r1_door1_anim4.png</image>
+                <image>images/int_r1_door1_anim5.png</image>
             </animation>
         </animations>
 
@@ -175,9 +125,46 @@
 
     <interactable>
 
+        <name>Door</name>
+
+        <inter_id>int_r2_door1</inter_id>
+
+        <states>
+            <state id="default">open</state>
+        </states>
+
+        <spawn_position>
+            <x>0</x>
+            <y>0</y>
+        </spawn_position>
+
+        <animations>
+            <animation id="open">
+                <image>images/int_r2_door1_default.png</image>
+            </animation>
+        </animations>
+
+        <descriptions>
+            <description id="open">The door is open.</description>
+        </descriptions>
+
+        <on_interact>
+
+            <interaction>
+                <reqired_item>none</reqired_item>
+                <required_state>unlocked</required_state>
+                <verb>enter room_id</verb>
+            </interaction>
+
+        </on_interact>
+
+    </interactable>
+
+    <interactable>
+
         <name>Desk</name>
 
-        <inter_id>int_cont_2</inter_id>
+        <inter_id>int_r2_desk1</inter_id>
 
         <states>
             <state id="default">contains_lighter</state>
@@ -191,10 +178,10 @@
 
         <animations>
             <animation id="contains_lighter">
-                <image>FILEPATH</image>
+                <image>images/int_r2_desk1_default.png</image>
             </animation>
             <animation id="emptied">
-                <image>FILEPATH</image>
+                <image>images/int_r2_desk1_default.png</image>
             </animation>
         </animations>
 
@@ -222,7 +209,7 @@
 
         <name>Fire place</name>
 
-        <inter_id>int_def_1</inter_id>
+        <inter_id>int_r2_firep1</inter_id>
 
         <states>
             <state id="default">empty</state>
@@ -237,13 +224,15 @@
 
         <animations>
             <animation id="empty">
-                <image>FILEPATH</image>
+                <image>images/int_r2_firep1_empty.png</image>
             </animation>
             <animation id="contains_fire_wood">
-                <image>FILEPATH</image>
+                <image>images/int_r2_firep1_fire_wood.png</image>
             </animation>
             <animation id="burning">
-                <image>FILEPATH</image>
+                <image>images/int_r2_firep1_anim1.png</image>
+                <image>images/int_r2_firep1_anim2.png</image>
+                <image>images/int_r2_firep1_anim3.png</image>
             </animation>
         </animations>
 

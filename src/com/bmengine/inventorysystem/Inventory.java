@@ -38,6 +38,7 @@ public class Inventory {
      *
      * @param item - Item to be removed
      */
+    /*
     public void removeItem(InventoryItem item){
 
         String id = item.getId();
@@ -49,6 +50,7 @@ public class Inventory {
             }
         }
     }
+     */
 
     /**
      * Sets position of all items

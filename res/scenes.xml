@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<scenes>
+
+    <scene>
+
+        <name>Template room</name>
+
+        <scene_id>scene_test_1</scene_id>
+
+        <background>
+            <animation id="bkg_image">
+                <image>FILEPATH</image>
+            </animation>
+            <image id="bounds">FILEPATH</image>
+            <sound id="bkg_sound">FILEPATH</sound>
+        </background>
+
+        <items>
+            <item>test_item_1</item>
+            <item>test_item_2</item>
+        </items>
+
+        <interactables>
+            <interactable>test_inter_1</interactable>
+            <interactable>test_inter_2</interactable>
+        </interactables>
+
+        <chars>
+            <nps>test_npc_id</nps>
+        </chars>
+
+    </scene>
+
+
+
+    <scene>
+
+        <name>First room</name>
+
+        <scene_id>scene_room_1</scene_id>
+
+        <background>
+            <animation id="bkg_image">
+                <image>images/r1_bkg.png</image>
+            </animation>
+            <image id="bounds">images/r1_bkg_bounds.png</image>
+            <sound id="bkg_sound">FILEPATH</sound>
+        </background>
+
+        <items>
+            <item>key_id</item>
+        </items>
+
+        <interactables>
+            <interactable>int_r1_cupb1</interactable>
+            <interactable>int_r1_door1</interactable>
+        </interactables>
+
+    </scene>
+
+
+    <scene>
+
+        <name>Second room</name>
+
+        <scene_id>scene_room_2</scene_id>
+
+        <background>
+            <animation id="bkg_image">
+                <image>images/r2_bkg.png</image>
+            </animation>
+            <image id="bounds">images/r2_bkg_bounds.png</image>
+            <sound id="bkg_sound">FILEPATH</sound>
+        </background>
+
+        <items>
+            <item>wood_id</item>
+            <item>lighter_id</item>
+            <item>lighter_fluid_id</item>
+            <item>paper_id</item>
+            <item>fire_wood_id</item>
+        </items>
+
+        <interactables>
+            <interactable>int_r2_door1</interactable>
+            <interactable>int_r2_desk1</interactable>
+            <interactable>int_r2_firep1</interactable>
+        </interactables>
+
+        <chars>
+            <nps>npc_r2_roger1</nps>
+        </chars>
+
+    </scene>
+
+
+</scenes>

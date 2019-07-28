@@ -14,7 +14,7 @@ public class Texture {
         BufferedImageLoader imageLoader = new BufferedImageLoader();
 
         try {
-            player_spritesheet_image = imageLoader.loadImage("/temp_player_spreadsheet.png");
+            player_spritesheet_image = imageLoader.loadImage("/images/temp_player_spreadsheet.png");
         } catch (Exception e) {
             System.out.println("!!! Failed to load buffered image in textures.");
             e.printStackTrace();

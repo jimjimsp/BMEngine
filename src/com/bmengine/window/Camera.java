@@ -10,7 +10,7 @@ Creates the camera and dictates its tick behavior.
 
 import com.bmengine.primitives.Position;
 
-public class rCamera {
+public class Camera {
 
     private Position position;
 

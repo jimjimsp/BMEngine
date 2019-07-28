@@ -4,7 +4,7 @@
 
     <dialog id="101">
         <condition>
-            <require>CHECK IF fire_place HAS STATE burning</require>
+            <require>CHECK IF char_npc_1 HAS STATE has_wood</require>
             <verb id="true">set_dialog 102</verb>
             <verb id="false">set_dialog 103</verb>
         </condition>

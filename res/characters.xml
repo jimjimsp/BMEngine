@@ -1,29 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
 <characters>
-    <player>
 
-    </player>
-
-    <non_player>
+    <npc>
         <name>Roger</name>
 
-        <inter_id>char_npc_1</inter_id>
+        <inter_id>npc_r2_roger1</inter_id>
 
         <states>
-            <state id="default">Holding fluid</state>
-            <state>Without fluid</state>
+            <state id="default">has_wood</state>
+            <state>empty</state>
         </states>
 
         <behaviours>
-            <behaviour id="idle">
-                Roger is idle
-            </behaviour>
-            <behaviour id="walking">
-                Roger is walking
-            </behaviour>
-            <behaviour id="talking">
-                Roger is talking
-            </behaviour>
+            <behaviour id="default">idle</behaviour>
+            <behaviour>moving</behaviour>
+            <behaviour>talking</behaviour>
         </behaviours>
 
         <spawn_position>
@@ -32,22 +24,22 @@
         </spawn_position>
 
         <animations>
-            <animation_state id="holding fluid">
+            <animation_state id="has_wood">
                 <animation id="idle">
                     <image>FILEPATH</image>
                 </animation>
-                <animation id="walking">
+                <animation id="moving">
                     <image>FILEPATH</image>
                 </animation>
                 <animation id="talking">
                     <image>FILEPATH</image>
                 </animation>
             </animation_state>
-            <animation_state id="without fluid">
+            <animation_state id="empty">
                 <animation id="idle">
                     <image>FILEPATH</image>
                 </animation>
-                <animation id="walking">
+                <animation id="moving">
                     <image>FILEPATH</image>
                 </animation>
                 <animation id="talking">
@@ -57,38 +49,26 @@
         </animations>
 
         <descriptions>
-            <description id="holding fluid">Roger is holding the fire juice.</description>
-            <description id="without fluid">Roger looks sad without his fire juice.</description>
+            <description id="has_wood">Roger got some pretty nasty wood.</description>
+            <description id="empty">Roger looks sad without his wood.</description>
         </descriptions>
 
         <on_interact>
 
             <interaction>
                 <reqired_item>none</reqired_item>
-                <required_state>holding fluid</required_state>
-                <verb>set_state talking</verb>
-                <verb>talk Roger_dialogue_1</verb>
-            </interaction>
-
-            <interaction>
-                <reqired_item>none</reqired_item>
-                <required_state>without fluid</required_state>
-                <verb>set_state talking</verb>
-                <verb>talk Roger_dialogue_2</verb>
-            </interaction>
-
-            <interaction>
-                <reqired_item>example_item_2</reqired_item>
-                <required_state>state_2</required_state>
-                <verb>print This interactable in now in state 3.</verb>
-                <verb>set_state state_3</verb>
+                <required_state>none</required_state>
+                <verb>set_behaviour talking</verb>
+                <verb>start_dialog 101</verb>
             </interaction>
 
         </on_interact>
 
-    </non_player>
+    </npc>
 
-    <non_player>
+
+
+    <npc>
         <name>Template npc</name>
 
         <inter_id>npc_ex_1</inter_id>
@@ -147,7 +127,7 @@
 
         </on_interact>
 
-    </non_player>
+    </npc>
 
 
 </characters>
