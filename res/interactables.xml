@@ -3,136 +3,14 @@
 <interactables>
 
     <interactable>
+        <name>Template Interactable</name>
 
-        <name>EXAMPLE INTER</name>
-
-        <inter_id>int_type_nr</inter_id>
-
-        <spawn_position>
-            <x>0</x>
-            <y>0</y>
-        </spawn_position>
-
-        <images>
-            <image>
-                FILEPATH_1
-            </image>
-            <image>
-                FILEPATH_2
-            </image>
-        </images>
-
-        <description>
-            This is an example interactable.
-        </description>
-
-        <on_interact>
-            ON INTERACT METHOD
-        </on_interact>
-
-    </interactable>
-
-
-    <interactable>
-
-        <name>Door</name>
-
-        <inter_id>int_door_1</inter_id>
-
-        <spawn_position>
-            <x>0</x>
-            <y>0</y>
-        </spawn_position>
-
-        <images>
-            <image id="1">
-                FILEPATH_1
-            </image>
-            <image id="2">
-                FILEPATH_2
-            </image>
-        </images>
-
-        <descriptions>
-            <description id="1">
-                The door seems to be locked.
-            </description>
-            <description id="2">
-                The door is unlocked.
-            </description>
-        </descriptions>
-
-        <on_interact>
-            <reqired_item>
-                // key id
-            </reqired_item>
-            <required_state>
-                none
-            </required_state>
-            <action>
-                unlock
-            </action>
-        </on_interact>
-
-        <on_enter>
-            // next room
-        </on_enter>
-
-    </interactable>
-
-
-    <interactable>
-
-        <name>Desk</name>
-
-        <inter_id>int_cont_1</inter_id>
-
-        <spawn_position>
-            <x>0</x>
-            <y>0</y>
-        </spawn_position>
-
-        <images>
-            <image id="1">
-                FILEPATH_1
-            </image>
-            <image id="2">
-                FILEPATH_2
-            </image>
-        </images>
-
-        <descriptions>
-            <description id="1">
-                It is a desk.
-            </description>
-        </descriptions>
-
-        <on_interact>
-            <reqired_item>
-                none
-            </reqired_item>
-            <required_state>
-                none
-            </required_state>
-            <action>
-                print: "There is a lighter here."
-                get lighter_id
-            </action>
-        </on_interact>
-
-    </interactable>
-
-
-    <interactable>
-
-        <name>Fire place</name>
-
-        <inter_id>int_def_1</inter_id>
+        <inter_id>int_ex_1</inter_id>
 
         <states>
-            <state>empty</state>
-            <state>contains_fire_wood</state>
-            <state>fire_burning</state>
+            <state id="default">state_1</state>
+            <state>state_2</state>
+            <state>state_3</state>
         </states>
 
         <spawn_position>
@@ -140,39 +18,45 @@
             <y>0</y>
         </spawn_position>
 
-        <images>
-            <image id="1">
-                FILEPATH_1
-            </image>
-            <image id="2">
-                FILEPATH_2
-            </image>
-        </images>
+        <animations>
+            <animation id="state_1">
+                <image>FILEPATH</image>
+            </animation>
+            <animation id="state_2">
+                <image>FILEPATH</image>
+            </animation>
+            <animation id="state_3">
+                <image>FILEPATH</image>
+            </animation>
+        </animations>
 
         <descriptions>
-            <description id="1">
-                It is an empty fire place.
-            </description>
-            <description id="2">
-                The fire place contains fire wood.
-            </description>
-            <description id="2">
-                The fire is burning.
-            </description>
+            <description id="state_1">This interactable is in state 1.</description>
+            <description id="state_2">This interactable is in state 2.</description>
+            <description id="state_3">This interactable is in state 3.</description>
         </descriptions>
 
         <on_interact>
 
             <interaction>
-                <reqired_item>fire wood</reqired_item>
+                <reqired_item>none</reqired_item>
                 <required_state>none</required_state>
-                <verb>set state contains_fire_wood</verb>
+                <verb>print description id=current_state</verb>
             </interaction>
 
             <interaction>
-                <reqired_item>lighter</reqired_item>
-                <required_state>contains fire wood</required_state>
-                <verb>set state fire_burning</verb>
+                <reqired_item>example_item_1</reqired_item>
+                <required_state>state_1</required_state>
+                <verb>print This interactable in now in state 2.</verb>
+                <verb>get example_item_2</verb>
+                <verb>set_state state_2</verb>
+            </interaction>
+
+            <interaction>
+                <reqired_item>example_item_2</reqired_item>
+                <required_state>state_2</required_state>
+                <verb>print This interactable in now in state 3.</verb>
+                <verb>set_state state_3</verb>
             </interaction>
 
         </on_interact>
