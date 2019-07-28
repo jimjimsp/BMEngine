@@ -3,6 +3,7 @@
 <interactables>
 
     <interactable>
+
         <name>Template Interactable</name>
 
         <inter_id>int_ex_1</inter_id>
@@ -57,6 +58,214 @@
                 <required_state>state_2</required_state>
                 <verb>print This interactable in now in state 3.</verb>
                 <verb>set_state state_3</verb>
+            </interaction>
+
+        </on_interact>
+
+    </interactable>
+
+
+
+    <interactable>
+
+        <name>Cupboard</name>
+
+        <inter_id>int_cont_1</inter_id>
+
+        <states>
+            <state id="default">closed</state>
+            <state>opened</state>
+            <state>emptied</state>
+        </states>
+
+        <spawn_position>
+            <x>0</x>
+            <y>0</y>
+        </spawn_position>
+
+        <animations>
+            <animation id="closed">
+                <image>FILEPATH</image>
+            </animation>
+            <animation id="opened">
+                <image>FILEPATH</image>
+            </animation>
+            <animation id="emptied">
+                <image>FILEPATH</image>
+            </animation>
+        </animations>
+
+        <descriptions>
+            <description id="closed">The cupboard is closed.</description>
+            <description id="opened">There is a key inside.</description>
+            <description id="emptied">The cupboard is empty.</description>
+        </descriptions>
+
+        <on_interact>
+
+            <interaction>
+                <reqired_item>none</reqired_item>
+                <required_state>closed</required_state>
+                <verb>print "I've opened the cupboard"</verb>
+                <verb>set_state opened</verb>
+            </interaction>
+
+            <interaction>
+                <reqired_item>none</reqired_item>
+                <required_state>opened</required_state>
+                <verb>print "I've picked up the key"</verb>
+                <verb>get key_id</verb>
+                <verd>set_state emptied</verd>
+            </interaction>
+
+        </on_interact>
+
+    </interactable>
+
+
+
+    <interactable>
+
+        <name>Door</name>
+
+        <inter_id>int_door_1</inter_id>
+
+        <states>
+            <state id="default">locked</state>
+            <state>unlocked</state>
+        </states>
+
+        <spawn_position>
+            <x>0</x>
+            <y>0</y>
+        </spawn_position>
+
+        <animations>
+            <animation id="locked">
+                <image>FILEPATH</image>
+            </animation>
+            <animation id="unlocked">
+                <image>FILEPATH</image>
+            </animation>
+        </animations>
+
+        <descriptions>
+            <description id="locked">The door is locked.</description>
+            <description id="unlocked">The door is unlocked.</description>
+        </descriptions>
+
+        <on_interact>
+
+            <interaction>
+                <reqired_item>key_id</reqired_item>
+                <required_state>locked</required_state>
+                <verb>print "I've unlocked the door."</verb>
+            </interaction>
+
+            <interaction>
+                <reqired_item>none</reqired_item>
+                <required_state>unlocked</required_state>
+                <verb>enter room_id</verb>
+            </interaction>
+
+        </on_interact>
+
+    </interactable>
+
+
+
+    <interactable>
+
+        <name>Desk</name>
+
+        <inter_id>int_cont_2</inter_id>
+
+        <states>
+            <state id="default">contains_lighter</state>
+            <state>emptied</state>
+        </states>
+
+        <spawn_position>
+            <x>0</x>
+            <y>0</y>
+        </spawn_position>
+
+        <animations>
+            <animation id="contains_lighter">
+                <image>FILEPATH</image>
+            </animation>
+            <animation id="emptied">
+                <image>FILEPATH</image>
+            </animation>
+        </animations>
+
+        <descriptions>
+            <description id="contains_lighter">The desk contains ein Feuerzeug.</description>
+            <description id="emptied">It is a desk.</description>
+        </descriptions>
+
+        <on_interact>
+
+            <interaction>
+                <reqired_item>none</reqired_item>
+                <required_state>contains_lighter</required_state>
+                <verb>get lighter_id</verb>
+                <verb>set_state emptied</verb>
+            </interaction>
+
+        </on_interact>
+
+    </interactable>
+
+
+
+    <interactable>
+
+        <name>Fire place</name>
+
+        <inter_id>int_def_1</inter_id>
+
+        <states>
+            <state id="default">empty</state>
+            <state>contains_fire_wood</state>
+            <state>burning</state>
+        </states>
+
+        <spawn_position>
+            <x>0</x>
+            <y>0</y>
+        </spawn_position>
+
+        <animations>
+            <animation id="empty">
+                <image>FILEPATH</image>
+            </animation>
+            <animation id="contains_fire_wood">
+                <image>FILEPATH</image>
+            </animation>
+            <animation id="burning">
+                <image>FILEPATH</image>
+            </animation>
+        </animations>
+
+        <descriptions>
+            <description id="empty">It is a cold empty eerie fire place.</description>
+            <description id="contains_fire_wood">Looks like the fire wood might burn if I add fire ;)</description>
+            <description id="burning">It's a-burnin'.</description>
+        </descriptions>
+
+        <on_interact>
+
+            <interaction>
+                <reqired_item>fire_wood_id</reqired_item>
+                <required_state>empty</required_state>
+                <verb>set_state contains_fire_wood</verb>
+            </interaction>
+
+            <interaction>
+                <reqired_item>lighter_id</reqired_item>
+                <required_state>contains_fire_wood</required_state>
+                <verb>set_state burning</verb>
             </interaction>
 
         </on_interact>
