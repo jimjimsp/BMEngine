@@ -1,0 +1,153 @@
+
+<characters>
+    <player>
+
+    </player>
+
+    <non_player>
+        <name>Roger</name>
+
+        <inter_id>char_npc_1</inter_id>
+
+        <states>
+            <state id="default">Holding fluid</state>
+            <state>Without fluid</state>
+        </states>
+
+        <behaviours>
+            <behaviour id="idle">
+                Roger is idle
+            </behaviour>
+            <behaviour id="walking">
+                Roger is walking
+            </behaviour>
+            <behaviour id="talking">
+                Roger is talking
+            </behaviour>
+        </behaviours>
+
+        <spawn_position>
+            <x>0</x>
+            <y>0</y>
+        </spawn_position>
+
+        <animations>
+            <animation_state id="holding fluid">
+                <animation id="idle">
+                    <image>FILEPATH</image>
+                </animation>
+                <animation id="walking">
+                    <image>FILEPATH</image>
+                </animation>
+                <animation id="talking">
+                    <image>FILEPATH</image>
+                </animation>
+            </animation_state>
+            <animation_state id="without fluid">
+                <animation id="idle">
+                    <image>FILEPATH</image>
+                </animation>
+                <animation id="walking">
+                    <image>FILEPATH</image>
+                </animation>
+                <animation id="talking">
+                    <image>FILEPATH</image>
+                </animation>
+            </animation_state>
+        </animations>
+
+        <descriptions>
+            <description id="holding fluid">Roger is holding the fire juice.</description>
+            <description id="without fluid">Roger looks sad without his fire juice.</description>
+        </descriptions>
+
+        <on_interact>
+
+            <interaction>
+                <reqired_item>none</reqired_item>
+                <required_state>holding fluid</required_state>
+                <verb>set_state talking</verb>
+                <verb>talk Roger_dialogue_1</verb>
+            </interaction>
+
+            <interaction>
+                <reqired_item>none</reqired_item>
+                <required_state>without fluid</required_state>
+                <verb>set_state talking</verb>
+                <verb>talk Roger_dialogue_2</verb>
+            </interaction>
+
+            <interaction>
+                <reqired_item>example_item_2</reqired_item>
+                <required_state>state_2</required_state>
+                <verb>print This interactable in now in state 3.</verb>
+                <verb>set_state state_3</verb>
+            </interaction>
+
+        </on_interact>
+
+    </non_player>
+
+    <non_player>
+        <name>Template npc</name>
+
+        <inter_id>npc_ex_1</inter_id>
+
+        <states>
+            <state id="default">state_1</state>
+            <state>state_2</state>
+            <state>state_3</state>
+        </states>
+
+        <spawn_position>
+            <x>0</x>
+            <y>0</y>
+        </spawn_position>
+
+        <animations>
+            <animation id="state_1">
+                <image>FILEPATH</image>
+            </animation>
+            <animation id="state_2">
+                <image>FILEPATH</image>
+            </animation>
+            <animation id="state_3">
+                <image>FILEPATH</image>
+            </animation>
+        </animations>
+
+        <descriptions>
+            <description id="state_1">This interactable is in state 1.</description>
+            <description id="state_2">This interactable is in state 2.</description>
+            <description id="state_3">This interactable is in state 3.</description>
+        </descriptions>
+
+        <on_interact>
+
+            <interaction>
+                <reqired_item>none</reqired_item>
+                <required_state>none</required_state>
+                <verb>print description id=current_state</verb>
+            </interaction>
+
+            <interaction>
+                <reqired_item>example_item_1</reqired_item>
+                <required_state>state_1</required_state>
+                <verb>print This interactable in now in state 2.</verb>
+                <verb>get example_item_2</verb>
+                <verb>set_state state_2</verb>
+            </interaction>
+
+            <interaction>
+                <reqired_item>example_item_2</reqired_item>
+                <required_state>state_2</required_state>
+                <verb>print This interactable in now in state 3.</verb>
+                <verb>set_state state_3</verb>
+            </interaction>
+
+        </on_interact>
+
+    </non_player>
+
+
+</characters>
