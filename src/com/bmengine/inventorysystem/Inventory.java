@@ -39,8 +39,8 @@ public class Inventory {
      * @param item - Item to be removed
      */
     public void removeItem(InventoryItem item){
-        String id = item.getId();
 
+        String id = item.getId();
         for(int i = 0; i < items.size(); i++) {
             if (id.equals(items.get(i).getId())) {
                 items.remove(i);
