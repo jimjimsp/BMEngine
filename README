@@ -35,3 +35,26 @@ TODO:
     * Position
 * Save/Load
 * I/O (made a class KeyInput /J.)
+
+XML-files:
+* game-setup
+* scene
+* character 
+* player
+* interactable
+  * name
+  * inter_id
+  * position
+  * [image] (alt: [animation])
+  * description
+  * on_interact
+* item 
+  * name
+  * item_id
+  * spawn_position
+  * [image_world] (alt: [animation_world])
+  * image_bag
+  * description
+  * [item_combinations]
+  * [interactable_combinations]
+  * combination result
