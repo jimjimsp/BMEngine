@@ -43,4 +43,22 @@
         </interactable_combinations>
     </item>
 
+    <item>
+        <name>WOOD</name>
+        <item_id>2</item_id>
+        <spawn_position>
+            <x>50</x>
+            <y>20</y>
+        </spawn_position>
+        <image_world>
+            <image>FILEPATH</image>
+        </image_world>
+        <image_bag>FILEPATH</image_bag>
+        <description>Some wood</description>
+        <item_combinations>
+            <combination>3</combination>
+        </item_combinations>
+        <combination_result>6</combination_result>
+    </item>
+
 </items>
