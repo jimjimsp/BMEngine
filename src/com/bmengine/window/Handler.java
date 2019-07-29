@@ -38,7 +38,7 @@ public class Handler {
     public void tick(){
         for(int i = 0; i < objects.size(); i++){
             tempObject = objects.get(i);
-            tempObject.tick(objects);
+            tempObject.tick(objects); //tempObject kanske e onödigt, bah ta objects.get(i).tick() - E
         }
     }
 

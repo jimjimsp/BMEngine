@@ -28,6 +28,10 @@
             <y>?</y>
         </spawn_position>
         <image_world>
+            <size>
+                <height>?</height>
+                <width>?</width>
+            </size>
             <image>?FILEPATH?</image>
         </image_world>
         <image_bag>?FILEPATH?</image_bag>

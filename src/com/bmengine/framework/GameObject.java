@@ -31,15 +31,16 @@ public abstract class GameObject {
         this.bounds = bounds;
     }
 
-    public abstract void tick(LinkedList<GameObject> objects);
-    public abstract void render(Graphics g);
 
     public Position getPosition(){
         return position;
     }
-
     public void setPosition(Position position){
         this.position = position;
     }
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
 
+    public abstract void tick(LinkedList<GameObject> objects);
+    public abstract void render(Graphics g);
 }
