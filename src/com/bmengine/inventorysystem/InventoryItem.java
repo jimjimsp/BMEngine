@@ -18,6 +18,10 @@ public class InventoryItem extends GameObject {
 
     }
 
+    public String getId() {
+        return id;
+    }
+
     @Override
     public void tick(LinkedList<GameObject> objects) {
 
