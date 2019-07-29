@@ -17,8 +17,9 @@ public class Player extends WorldObject {
 
     public Player(Position position, Handler handler, Texture texture) {
         super(position, "player", handler, new ObjectBounds(64,64),
-                new Animation(5, texture.player[6]), new Animation(5, texture.player[3],texture.player[4],texture.player[5]),
-                new Animation(5,texture.player[0],texture.player[1],texture.player[2]));
+                new Animation(5, texture.player[16],texture.player[17],texture.player[18],texture.player[19],texture.player[20],texture.player[21],texture.player[22]),
+                new Animation(5, texture.player[8],texture.player[9],texture.player[10],texture.player[11],texture.player[12],texture.player[13],texture.player[14],texture.player[15]),
+                new Animation(5,texture.player[0],texture.player[1],texture.player[2],texture.player[3],texture.player[4],texture.player[5],texture.player[6],texture.player[7]));
     }
 
     public void tick(LinkedList<GameObject> objects){
