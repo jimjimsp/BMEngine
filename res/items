@@ -2,63 +2,172 @@
 <items>
 
     <item>
-        <name>EXAMPLE</name>
-        <item_id>0</item_id>
-        <spawn_position>
-            <x>0</x>
-            <y>0</y>
-        </spawn_position>
-        <image_world>
-            <image>FILEPATH</image>
-        </image_world>
-        <image_bag>FILEPATH</image_bag>
-        <description>An example item</description>
-        <item_combinations>
-            <combination>1</combination>
-            <combination>2</combination>
-            <combination>3</combination>
-        </item_combinations>
-        <interactable_combinations>
-            <combination>1</combination>
-            <combination>2</combination>
-        </interactable_combinations>
-        <combination_result>6</combination_result>
-    </item>
-
-
-    <item>
         <name>Key</name>
         <item_id>1</item_id>
         <spawn_position>
-            <x>30</x>
-            <y>25</y>
+            <x>?</x>
+            <y>?</y>
         </spawn_position>
         <image_world>
-            <image>FILEPATH</image>
+            <image>?FILEPATH?</image>
         </image_world>
-        <image_bag>FILEPATH</image_bag>
+        <image_bag>?FILEPATH?</image_bag>
         <description>A key</description>
         <interactable_combinations>
-            <combination>1</combination>
+            <combination>
+                <interactable_id>?</interactable_id>
+            </combination>
         </interactable_combinations>
     </item>
 
     <item>
-        <name>WOOD</name>
+        <name>Wood</name>
         <item_id>2</item_id>
         <spawn_position>
-            <x>50</x>
-            <y>20</y>
+            <x>?</x>
+            <y>?</y>
         </spawn_position>
         <image_world>
-            <image>FILEPATH</image>
+            <image>?FILEPATH?</image>
         </image_world>
-        <image_bag>FILEPATH</image_bag>
+        <image_bag>?FILEPATH?</image_bag>
         <description>Some wood</description>
         <item_combinations>
-            <combination>3</combination>
+            <combination>
+                <item_id>4</item_id>
+                <combination_result>6</combination_result>
+            </combination>
+            <combination>
+                <item_id>7</item_id>
+                <combination_result>8</combination_result>
+            </combination>
         </item_combinations>
-        <combination_result>6</combination_result>
+    </item>
+
+    <item>
+        <name>Lighter</name>
+        <item_id>3</item_id>
+        <spawn_position>
+            <x>?</x>
+            <y>?</y>
+        </spawn_position>
+        <image_world>
+            <image>?FILEPATH?</image>
+        </image_world>
+        <image_bag>?FILEPATH?</image_bag>
+        <description>A lighter</description>
+        <interactable_combinations>
+            <combination>
+                <interactable_id>?</interactable_id>
+            </combination>
+        </interactable_combinations>
+    </item>
+
+    <item>
+        <name>Paper</name>
+        <item_id>4</item_id>
+        <spawn_position>
+            <x>?</x>
+            <y>?</y>
+        </spawn_position>
+        <image_world>
+            <image>?FILEPATH?</image>
+        </image_world>
+        <image_bag>?FILEPATH?</image_bag>
+        <description>A piece of paper</description>
+        <item_combinations>
+            <combination>
+                <item_id>2</item_id>
+                <combination_result>6</combination_result>
+            </combination>
+            <combination>
+                <item_id>5</item_id>
+                <combination_result>7</combination_result>
+            </combination>
+        </item_combinations>
+    </item>
+
+    <item>
+        <name>Lighter fluid</name>
+        <item_id>5</item_id>
+        <spawn_position>
+            <x>?</x>
+            <y>?</y>
+        </spawn_position>
+        <image_world>
+            <image>?FILEPATH?</image>
+        </image_world>
+        <image_bag>?FILEPATH?</image_bag>
+        <description>A bottle of lighter fluid</description>
+        <item_combinations>
+            <combination>
+                <item_id>4</item_id>
+                <combination_result>7</combination_result>
+            </combination>
+            <combination>
+                <item_id>6</item_id>
+                <combination_result>8</combination_result>
+            </combination>
+        </item_combinations>
+    </item>
+
+    <item>
+        <name>Wood + Paper</name>
+        <item_id>6</item_id>
+        <spawn_position>
+            <x>?</x>
+            <y>?</y>
+        </spawn_position>
+        <image_world>
+            <image>?FILEPATH?</image>
+        </image_world>
+        <image_bag>?FILEPATH?</image_bag>
+        <description>Wood bundled in paper</description>
+        <item_combinations>
+            <combination>
+                <item_id>5</item_id>
+                <combination_result>8</combination_result>
+            </combination>
+        </item_combinations>
+    </item>
+
+    <item>
+        <name>Soaked paper</name>
+        <item_id>7</item_id>
+        <spawn_position>
+            <x>?</x>
+            <y>?</y>
+        </spawn_position>
+        <image_world>
+            <image>?FILEPATH?</image>
+        </image_world>
+        <image_bag>?FILEPATH?</image_bag>
+        <description>Paper soaked in lighter fluid</description>
+        <item_combinations>
+            <combination>
+                <item_id>6</item_id>
+                <combination_result>8</combination_result>
+            </combination>
+        </item_combinations>
+    </item>
+
+    <item>
+        <name>Fire wood</name>
+        <item_id>8</item_id>
+        <spawn_position>
+            <x>?</x>
+            <y>?</y>
+        </spawn_position>
+        <image_world>
+            <image>?FILEPATH?</image>
+        </image_world>
+        <image_bag>?FILEPATH?</image_bag>
+        <description>Some wood that can be lit on fire</description>
+        <interactable_combinations>
+            <combination>
+                <interactable_id>?</interactable_id>
+            </combination>
+        </interactable_combinations>
     </item>
 
 </items>
