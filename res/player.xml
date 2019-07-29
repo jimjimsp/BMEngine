@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<player>
+
+    <states>
+        <state id="default">idle</state>
+        <state>moving</state>
+        <state>talking</state>
+    </states>
+
+    <animations>
+        <animation id="idle">
+            <image>FILEPATH</image>
+        </animation>
+        <animation id="moving">
+            <image>FILEPATH</image>
+        </animation>
+        <animation id="talking">
+            <image>FILEPATH</image>
+        </animation>
+    </animations>
+
+</player>

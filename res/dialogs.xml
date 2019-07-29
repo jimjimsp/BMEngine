@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dialogs>
+
+    <dialog id="101">
+        <condition>
+            <require>CHECK IF char_npc_1 HAS STATE has_wood</require>
+            <verb id="true">set_dialog 102</verb>
+            <verb id="false">set_dialog 103</verb>
+        </condition>
+    </dialog>
+
+    <dialog id="102">
+        <message>Mmm... Nice and hot.</message>
+    </dialog>
+
+    <dialog id="103">
+        <message>I'm freezing.</message>
+        <choises>
+            <choise id="I'm not">
+                <message>Good for you.</message>
+            </choise>
+            <choise id="I know.">
+                <verb>set_dialog 104</verb>
+            </choise>
+        </choises>
+    </dialog>
+
+    <dialog id="104">
+        <message>If someone just could light that fire place.</message>
+        <choises>
+            <choise condition=" CHECK wood OR fire_wood NOT IN INVENTORY" id="I don't have any wood.">
+                <verb>set_dialog 105</verb>
+            </choise>
+            <choise id="I'm on it.">
+                <message>Thank you.</message>
+            </choise>
+        </choises>
+    </dialog>
+
+    <dialog>
+        <message>I have some. Do you want it?</message>
+        <choises>
+            <choise id="Sure.">
+                <message>Here you go.</message>
+                <verb>get wood</verb>
+            </choise>
+            <choise id="No.">
+                <message>Okay...</message>
+            </choise>
+        </choises>
+    </dialog>
+
+</dialogs>

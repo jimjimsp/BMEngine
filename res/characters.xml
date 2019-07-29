@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<characters>
+
+    <npc>
+        <name>Roger</name>
+
+        <inter_id>npc_r2_roger1</inter_id>
+
+        <states>
+            <state id="default">has_wood</state>
+            <state>empty</state>
+        </states>
+
+        <behaviours>
+            <behaviour id="default">idle</behaviour>
+            <behaviour>moving</behaviour>
+            <behaviour>talking</behaviour>
+        </behaviours>
+
+        <spawn_position>
+            <x>0</x>
+            <y>0</y>
+        </spawn_position>
+
+        <animations>
+            <animation_state id="has_wood">
+                <animation id="idle">
+                    <image>FILEPATH</image>
+                </animation>
+                <animation id="moving">
+                    <image>FILEPATH</image>
+                </animation>
+                <animation id="talking">
+                    <image>FILEPATH</image>
+                </animation>
+            </animation_state>
+            <animation_state id="empty">
+                <animation id="idle">
+                    <image>FILEPATH</image>
+                </animation>
+                <animation id="moving">
+                    <image>FILEPATH</image>
+                </animation>
+                <animation id="talking">
+                    <image>FILEPATH</image>
+                </animation>
+            </animation_state>
+        </animations>
+
+        <descriptions>
+            <description id="has_wood">Roger got some pretty nasty wood.</description>
+            <description id="empty">Roger looks sad without his wood.</description>
+        </descriptions>
+
+        <on_interact>
+
+            <interaction>
+                <reqired_item>none</reqired_item>
+                <required_state>none</required_state>
+                <verb>set_behaviour talking</verb>
+                <verb>start_dialog 101</verb>
+            </interaction>
+
+        </on_interact>
+
+    </npc>
+
+
+
+    <npc>
+        <name>Template npc</name>
+
+        <inter_id>npc_ex_1</inter_id>
+
+        <states>
+            <state id="default">state_1</state>
+            <state>state_2</state>
+            <state>state_3</state>
+        </states>
+
+        <spawn_position>
+            <x>0</x>
+            <y>0</y>
+        </spawn_position>
+
+        <animations>
+            <animation id="state_1">
+                <image>FILEPATH</image>
+            </animation>
+            <animation id="state_2">
+                <image>FILEPATH</image>
+            </animation>
+            <animation id="state_3">
+                <image>FILEPATH</image>
+            </animation>
+        </animations>
+
+        <descriptions>
+            <description id="state_1">This interactable is in state 1.</description>
+            <description id="state_2">This interactable is in state 2.</description>
+            <description id="state_3">This interactable is in state 3.</description>
+        </descriptions>
+
+        <on_interact>
+
+            <interaction>
+                <reqired_item>none</reqired_item>
+                <required_state>none</required_state>
+                <verb>print description id=current_state</verb>
+            </interaction>
+
+            <interaction>
+                <reqired_item>example_item_1</reqired_item>
+                <required_state>state_1</required_state>
+                <verb>print This interactable in now in state 2.</verb>
+                <verb>get example_item_2</verb>
+                <verb>set_state state_2</verb>
+            </interaction>
+
+            <interaction>
+                <reqired_item>example_item_2</reqired_item>
+                <required_state>state_2</required_state>
+                <verb>print This interactable in now in state 3.</verb>
+                <verb>set_state state_3</verb>
+            </interaction>
+
+        </on_interact>
+
+    </npc>
+
+
+</characters>

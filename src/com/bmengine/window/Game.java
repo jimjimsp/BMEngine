@@ -145,7 +145,7 @@ public class Game extends Canvas implements Runnable{
 
     // Set up window.
     public static void main(String args[]){
-        new Window(800, 600, "Bad Moon Engine", new Game());
+        new Window(1080, 690, "Bad Moon Engine", new Game());
     }
 
 }
