@@ -3,7 +3,6 @@
 <scenes>
 
     <scene>
-
         <name>Template room</name>
 
         <scene_id>scene_test_1</scene_id>
@@ -12,8 +11,8 @@
             <animation id="bkg_image">
                 <image>FILEPATH</image>
             </animation>
-            <image id="bounds">FILEPATH</image>
-            <sound id="bkg_sound">FILEPATH</sound>
+            <bounds>FILEPATH</bounds>
+            <bkg_sound>FILEPATH</bkg_sound>
         </background>
 
         <items>
@@ -29,7 +28,6 @@
         <chars>
             <nps>test_npc_id</nps>
         </chars>
-
     </scene>
 
 

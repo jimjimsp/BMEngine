@@ -2,9 +2,14 @@ package com.bmengine.window;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Map;
+
 import com.bmengine.framework.GameObject;
+import com.bmengine.framework.XMLParser;
 import com.bmengine.primitives.Position;
+import com.bmengine.worldobjects.Interactable;
 import com.bmengine.worldobjects.Player;
 
 
@@ -24,6 +29,8 @@ public class Handler {
     private GameObject tempObject;
     private Camera camera;
     private Player player;
+    private Map<String, Interactable> interactables;
+    private XMLParser xmlParser;
 
     private BufferedImage tempImage = null;
 
@@ -56,7 +63,11 @@ public class Handler {
     // Should fetch all of the start screens image resources. /J
     public void startGame(){
         player = new Player(new Position(0,0), this, Game.getInstance());
+        xmlParser = new XMLParser(this);
+        interactables = xmlParser.parseInteractables("res/interactables.xml");
         addObject(player);
+
+        interactables.forEach((key,value) -> interactables.get(key).printInfo());
     }
 
     public void mouseClicked(Position clickPosition) {

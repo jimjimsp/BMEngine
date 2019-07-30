@@ -2,6 +2,7 @@ package com.bmengine.window;
 
 import com.bmengine.framework.KeyInput;
 import com.bmengine.framework.MouseInput;
+import com.bmengine.framework.XMLParser;
 import com.bmengine.primitives.Position;
 import com.bmengine.worldobjects.Player;
 
@@ -85,7 +86,7 @@ public class Game extends Canvas implements Runnable{
 
             if(System.currentTimeMillis() - timer > 1000) {
                 timer += 1000;
-                System.out.println("FPS: " + frames + " TICKS: " + updates);
+                // System.out.println("FPS: " + frames + " TICKS: " + updates);
                 frames = 0;
                 updates = 0;
             }

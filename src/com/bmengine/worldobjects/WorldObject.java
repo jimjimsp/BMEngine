@@ -19,10 +19,6 @@ Walk left      -> animations[2]
 
 */
 
-
-
-
-
 public class WorldObject extends GameObject{
 
     private Position velDir = new Position(0,0);
@@ -31,14 +27,8 @@ public class WorldObject extends GameObject{
 
     private Animation[] animations;
 
-    public WorldObject(Position position, String id, Handler handler, ObjectBounds bounds,  Animation... args) {
+    public WorldObject(Position position, String id, Handler handler, ObjectBounds bounds) {
         super(position, id, handler, bounds);
-
-        animations = new Animation[args.length];
-
-        for (int i = 0; i<args.length; i++){
-            animations[i] = args[i];
-        }
 
     }
 
@@ -50,18 +40,6 @@ public class WorldObject extends GameObject{
     }
 
     public void render(Graphics g) {
-
-        if(velDir.getX() != 0 || velDir.getY() != 0) {
-            if(facing=='r') {
-                animations[1].drawAnimation(g, position);
-            }
-            else if(facing=='l') {
-                animations[2].drawAnimation(g, position);
-            }
-        }
-        else {
-            animations[0].drawAnimation(g, position);
-        }
     }
 
     public void updateFacing(){
@@ -80,9 +58,6 @@ public class WorldObject extends GameObject{
     }
 
     public void runAnimation(){
-        for (int i = 0; i<animations.length; i++) {
-            animations[i].runAnimation();
-        }
     }
 
     public Position getVelDir() {

@@ -19,6 +19,11 @@
             <y>0</y>
         </spawn_position>
 
+        <size>
+            <width>64</width>
+            <height>64</height>
+        </size>
+
         <animations>
             <animation id="closed">
                 <image>images/int_r1_cupb1_closed.png</image>
@@ -47,18 +52,22 @@
         <on_interact>
 
             <interaction>
-                <reqired_item>none</reqired_item>
+                <required_item>none</required_item>
                 <required_state>closed</required_state>
-                <verb>print "I've opened the cupboard"</verb>
-                <verb>set_state opened</verb>
+                <verbs>
+                    <verb>print "I've opened the cupboard"</verb>
+                    <verb>set_state opened</verb>
+                </verbs>
             </interaction>
 
             <interaction>
-                <reqired_item>none</reqired_item>
+                <required_item>none</required_item>
                 <required_state>opened</required_state>
-                <verb>print "I've picked up the key"</verb>
-                <verb>get key_id</verb>
-                <verd>set_state emptied</verd>
+                <verbs>
+                    <verb>print "I've picked up the key"</verb>
+                    <verb>get key_id</verb>
+                    <verd>set_state emptied</verd>
+                </verbs>
             </interaction>
 
         </on_interact>
@@ -81,6 +90,11 @@
             <x>0</x>
             <y>0</y>
         </spawn_position>
+
+        <size>
+            <width>64</width>
+            <height>64</height>
+        </size>
 
         <animations>
             <animation id="locked">
@@ -106,15 +120,19 @@
         <on_interact>
 
             <interaction>
-                <reqired_item>key_id</reqired_item>
+                <required_item>key_id</required_item>
                 <required_state>locked</required_state>
-                <verb>print "I've unlocked the door."</verb>
+                <verbs>
+                    <verb>print "I've unlocked the door."</verb>
+                </verbs>
             </interaction>
 
             <interaction>
-                <reqired_item>none</reqired_item>
+                <required_item>none</required_item>
                 <required_state>unlocked</required_state>
-                <verb>enter room_id</verb>
+                <verbs>
+                    <verb>enter room_id</verb>
+                </verbs>
             </interaction>
 
         </on_interact>
@@ -138,6 +156,11 @@
             <y>0</y>
         </spawn_position>
 
+        <size>
+            <width>64</width>
+            <height>64</height>
+        </size>
+
         <animations>
             <animation id="open">
                 <image>images/int_r2_door1_default.png</image>
@@ -151,9 +174,11 @@
         <on_interact>
 
             <interaction>
-                <reqired_item>none</reqired_item>
+                <required_item>none</required_item>
                 <required_state>unlocked</required_state>
-                <verb>enter room_id</verb>
+                <verbs>
+                    <verb>enter room_id</verb>
+                </verbs>
             </interaction>
 
         </on_interact>
@@ -176,6 +201,11 @@
             <y>0</y>
         </spawn_position>
 
+        <size>
+            <width>64</width>
+            <height>64</height>
+        </size>
+
         <animations>
             <animation id="contains_lighter">
                 <image>images/int_r2_desk1_default.png</image>
@@ -193,10 +223,12 @@
         <on_interact>
 
             <interaction>
-                <reqired_item>none</reqired_item>
+                <required_item>none</required_item>
                 <required_state>contains_lighter</required_state>
-                <verb>get lighter_id</verb>
-                <verb>set_state emptied</verb>
+                <verbs>
+                    <verb>get lighter_id</verb>
+                    <verb>set_state emptied</verb>
+                </verbs>
             </interaction>
 
         </on_interact>
@@ -222,6 +254,11 @@
             <y>0</y>
         </spawn_position>
 
+        <size>
+            <width>64</width>
+            <height>64</height>
+        </size>
+
         <animations>
             <animation id="empty">
                 <image>images/int_r2_firep1_empty.png</image>
@@ -245,15 +282,19 @@
         <on_interact>
 
             <interaction>
-                <reqired_item>fire_wood_id</reqired_item>
+                <required_item>fire_wood_id</required_item>
                 <required_state>empty</required_state>
-                <verb>set_state contains_fire_wood</verb>
+                <verbs>
+                    <verb>set_state contains_fire_wood</verb>
+                </verbs>
             </interaction>
 
             <interaction>
-                <reqired_item>lighter_id</reqired_item>
+                <required_item>lighter_id</required_item>
                 <required_state>contains_fire_wood</required_state>
-                <verb>set_state burning</verb>
+                <verbs>
+                    <verb>set_state burning</verb>
+                </verbs>
             </interaction>
 
         </on_interact>
