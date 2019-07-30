@@ -10,10 +10,16 @@ import java.util.LinkedList;
 
 public class InventoryItem extends GameObject {
 
+    private String id;
+
     public InventoryItem(Position position, String id, Handler handler, ObjectBounds objectBounds) {
         super(position, id, handler, objectBounds);
+        this.id = id;
 
+    }
 
+    public String getId() {
+        return id;
     }
 
     @Override
