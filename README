@@ -27,7 +27,7 @@ TODO:
     * Background Music
     * Background Image
     * List of intractable
-  * Intractable
+  * Interactable
     * Interaction
     * Position
     * Types: Pick up, Character, World Object
@@ -35,6 +35,16 @@ TODO:
     * Position
 * Save/Load
 * I/O (made a class KeyInput /J.)
+
+TODO:
+Petter:
+    XMLParser method for items
+    Item images
+    Figure out whats needed from XMLParser method
+Jim:
+    XMLParser method for characters
+    Animations
+    Fix rendering
 
 XML-files:
 * game-setup
@@ -58,3 +68,4 @@ XML-files:
   * [item_combinations]
   * [interactable_combinations]
   * combination result
+
