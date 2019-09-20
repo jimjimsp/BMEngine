@@ -23,12 +23,13 @@ public class MouseInput extends MouseAdapter {
         //Get object at mousePosition
         int mouseButton = e.getButton();
         switch(mouseButton) {
+            //Right click
             case 1:
                 //Interact with object
                 handler.mouseClicked(mousePosition); // temp method.
                 break;
-
-            case 2:
+            //Left click
+            case 3:
                 //Inspect object
                 handler.mouseClicked(mousePosition); // temp method.
                 break;
