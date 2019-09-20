@@ -4,12 +4,19 @@ import com.bmengine.primitives.Interaction;
 import com.bmengine.primitives.ObjectBounds;
 import com.bmengine.primitives.Position;
 import com.bmengine.window.Animation;
+import com.bmengine.window.BufferedImageLoader;
 import com.bmengine.window.Handler;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Interactable extends WorldObject {
+
+    BufferedImageLoader imageLoader;
+    Map<String, BufferedImage> animations = new HashMap<>();
 
     private String name;
     private String[] possibleStates;
@@ -18,8 +25,8 @@ public class Interactable extends WorldObject {
 
     private String currState;
 
-    public Interactable(String name, String id, String[] states, Position spawnPosition, int width, int height, Map<String, String> descriptions, ArrayList<Interaction> interactions, Handler handler) {
-        super(spawnPosition, id, handler, new ObjectBounds(width,height));
+    public Interactable(String name, String id, String[] states, Position position, int width, int height, Map<String, String> descriptions, ArrayList<Interaction> interactions, Handler handler) {
+        super(position, id, handler, new ObjectBounds(width,height));
 
         this.name = name;
         this.interactions = interactions;
@@ -29,10 +36,29 @@ public class Interactable extends WorldObject {
         for (int i = 0; i<states.length; i++){ this.possibleStates[i] = states[i]; }
 
         this.currState = possibleStates[1];
+        fetchAnimations();
+    }
+
+    private void fetchAnimations(){
+
+        for (int i = 0; i < possibleStates.length; i++) {
+            String path = "/images/int_r1_cupb1_closed.png";
+
+            try {
+                BufferedImage tempImage = imageLoader.loadImage("/res/images/player_spritesheet.png");
+                animations.put(possibleStates[i], tempImage);
+            } catch (Exception e) {
+                System.out.println("!!! Failed to load buffered image in texture for inter : " + id + " , state : " + possibleStates[i]);
+                e.printStackTrace();
+            }
+
+        }
     }
 
 
-
+    public void render(Graphics g) {
+        g.drawImage(animations.get(currState), (int) position.getX(), (int) position.getY(), null);
+    }
 
 
 

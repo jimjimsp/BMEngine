@@ -36,7 +36,6 @@ public class WorldObject extends GameObject{
         runAnimation();
         updateWalk();
         updateFacing();
-
     }
 
     public void render(Graphics g) {
