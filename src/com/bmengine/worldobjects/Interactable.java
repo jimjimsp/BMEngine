@@ -35,26 +35,8 @@ public class Interactable extends WorldObject {
 
         for (int i = 0; i<states.length; i++){ this.possibleStates[i] = states[i]; }
 
-        this.currState = possibleStates[1];
-        fetchAnimations();
+        this.currState = possibleStates[0];
     }
-
-    private void fetchAnimations(){
-
-        for (int i = 0; i < possibleStates.length; i++) {
-            String path = "/images/int_r1_cupb1_closed.png";
-
-            try {
-                BufferedImage tempImage = imageLoader.loadImage("/res/images/player_spritesheet.png");
-                animations.put(possibleStates[i], tempImage);
-            } catch (Exception e) {
-                System.out.println("!!! Failed to load buffered image in texture for inter : " + id + " , state : " + possibleStates[i]);
-                e.printStackTrace();
-            }
-
-        }
-    }
-
 
     public void render(Graphics g) {
         g.drawImage(animations.get(currState), (int) position.getX(), (int) position.getY(), null);
