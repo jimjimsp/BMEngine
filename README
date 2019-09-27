@@ -1,17 +1,3 @@
-BAD MOON ENGINE
-
-So far I've added the most of the architecture, that is:
-the game loop, the graphics/window, buffer strategy, image loader,
-abstract game object, object id. Basically all the stuff needed for
-the program to open up a window and continually update. I've taken most
-of the code from a previous game I've made, which means that a lot of
-stuff is probably going to have to be changed as we continue to work. But
-at least it is something to start with.
-
-I also commented as much as possible so y'all can understand what's going
-on, but just ask if there's a problem. I've signed all my comments with /J.
-
-/Jim.
 
 TODO:
 * Item system
